@@ -18,6 +18,4 @@ public class Rapporto
 
 	@Override
 	public String toString() { return mappaRapporto.toString(); }
-
-
 }
