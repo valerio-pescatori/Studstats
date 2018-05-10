@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed278f1d-6b81-4265-868e-3f4f7fe81e66" name="Default" comment="">
+    <list default="true" id="ed278f1d-6b81-4265-868e-3f4f7fe81e66" name="Default" comment="Commit di prova da intelliJ">
+      <change afterPath="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/AnalizzatoreSegretoSegretissimo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/StudstatsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Studstats.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Studstats.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/AggregatoreStatistico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/AggregatoreStatistico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/AnalizzatoriSemplici.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/analizzatori/AnalizzatoriSemplici.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/dati/Analizzatore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/dati/Analizzatore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/dati/Rapporto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/dati/Rapporto.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -14,20 +21,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Analizzatore.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Analizzatore.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/dati/Analizzatore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="411">
+              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Rapporto.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/dati/Rapporto.java">
+      <file leaf-file-name="AnalizzatoriSemplici.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/analizzatori/AnalizzatoriSemplici.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+            <state relative-caret-position="153">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AggregatoreStatistico.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/AggregatoreStatistico.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -49,6 +65,11 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Valerio Pescatori" />
+      </list>
+    </option>
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -65,15 +86,16 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/jshell/jshell_console_2.snippet" />
         <option value="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/csvParser.java" />
         <option value="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/CsvParser.java" />
-        <option value="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/AggregatoreStatistico.java" />
         <option value="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/PerOra.java" />
         <option value="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/MetodiAnalizzatori.java" />
         <option value="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/MyCsvParser.java" />
         <option value="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/PossibiliRapporti.java" />
         <option value="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/AnalizzatoriSemplici.java" />
         <option value="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/Studstats.java" />
-        <option value="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/dati/Analizzatore.java" />
         <option value="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/dati/Rapporto.java" />
+        <option value="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/AggregatoreStatistico.java" />
+        <option value="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/dati/Analizzatore.java" />
+        <option value="$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/StudstatsTest.java" />
       </list>
     </option>
   </component>
@@ -87,20 +109,20 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="553" />
+    <option name="y" value="47" />
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -124,24 +146,30 @@
               <item name="Studstats" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="studstats" type="462c0819:PsiDirectoryNode" />
-              <item name="dati" type="462c0819:PsiDirectoryNode" />
+              <item name="analizzatori" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.JavaDocs" value="true" />
+    <property name="Repository.Attach.Sources" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/GitHubDesktop/GitHubDesktop.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -162,14 +190,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.AnalizzatoriSemplici">
+  <component name="RunManager" selected="Application.Studstats">
     <configuration name="AnalizzatoriSemplici" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.uniroma1.lcl.studstats.AnalizzatoriSemplici" />
+      <option name="MAIN_CLASS_NAME" value="it.uniroma1.lcl.studstats.analizzatori.AnalizzatoriSemplici" />
       <module name="Studstats" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.uniroma1.lcl.studstats.*" />
+          <option name="PATTERN" value="it.uniroma1.lcl.studstats.analizzatori.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -180,7 +208,7 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.uniroma1.lcl.studstats.*" />
+          <option name="PATTERN" value="it.uniroma1.lcl.studstats.analizzatori.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -191,7 +219,7 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.uniroma1.lcl.studstats.*" />
+          <option name="PATTERN" value="it.uniroma1.lcl.studstats.analizzatori.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -268,6 +296,7 @@
       <workItem from="1525790919240" duration="7606000" />
       <workItem from="1525860974642" duration="9109000" />
       <workItem from="1525958066067" duration="7970000" />
+      <workItem from="1525967802425" duration="2469000" />
     </task>
     <task id="LOCAL-00001" summary="rimosso errore stupido">
       <created>1525965891974</created>
@@ -276,11 +305,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525965891974</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Commit di prova da intelliJ">
+      <created>1525967992176</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1525967992176</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50074000" />
+    <option name="totallyTimeSpent" value="52543000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -309,11 +345,11 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3287879" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3287879" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.3287879" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,7 +360,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="rimosso errore stupido" />
-    <option name="LAST_COMMIT_MESSAGE" value="rimosso errore stupido" />
+    <MESSAGE value="Commit di prova da intelliJ" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit di prova da intelliJ" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -334,20 +371,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/AggregatoreStatistico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/dati/Analizzatore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/PossibiliRapporti.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -650,13 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/AggregatoreStatistico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/lang/Enum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -678,13 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/AnalizzatoriSemplici.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="48" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/Studstats.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -695,17 +704,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/dati/Analizzatore.java">
+    <entry file="file://$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/analizzatori/AnalizzatoriSemplici.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/AggregatoreStatistico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/dati/Rapporto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        <state relative-caret-position="289">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/AnalizzatoreSegretoSegretissimo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/StudstatsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-524">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/uniroma1/lcl/studstats/dati/Analizzatore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
         </state>
       </provider>
     </entry>

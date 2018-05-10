@@ -28,4 +28,9 @@ public interface AggregatoreStatistico
 	 * @return la lista dei rapporti generati
 	 */
 	List<Rapporto> generaRapporti(TipoRapporto... tipiRapporto);
+
+	/**
+	 * Restituisce il numero di analizzatori memorizzati
+	 */
+	int numeroAnalizzatori();
 }

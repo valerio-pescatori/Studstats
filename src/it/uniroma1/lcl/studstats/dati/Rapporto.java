@@ -6,7 +6,6 @@ public class Rapporto
 {
 	private TipoRapporto tipoRapporto;
 	private HashMap mappaRapporto;
-	private int campoinutile;
 
 	public Rapporto(TipoRapporto tipoRapporto, HashMap mappaRapporto)
 	{

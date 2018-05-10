@@ -1,4 +1,4 @@
-package it.uniroma1.lcl.studstats;
+package it.uniroma1.lcl.studstats.analizzatori;
 
 import it.uniroma1.lcl.studstats.dati.Analizzatore;
 
