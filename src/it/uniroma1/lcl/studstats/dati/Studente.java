@@ -13,4 +13,7 @@ public class Studente
 	{
 		return map.toString();
 	}
+
+	public String get(String key) { return map.get(key); }
 }
+

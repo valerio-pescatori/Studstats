@@ -1,6 +1,4 @@
-package it.uniroma1.lcl.studstats;
-
-import it.uniroma1.lcl.studstats.dati.TipoRapporto;
+package it.uniroma1.lcl.studstats.dati.rapporti;
 
 public enum PossibiliRapporti implements TipoRapporto
 {

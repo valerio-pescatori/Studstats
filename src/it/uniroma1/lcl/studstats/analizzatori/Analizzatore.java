@@ -1,11 +1,15 @@
-package it.uniroma1.lcl.studstats.dati;
+package it.uniroma1.lcl.studstats.analizzatori;
+
+import it.uniroma1.lcl.studstats.dati.Studente;
+import it.uniroma1.lcl.studstats.dati.rapporti.Rapporto;
+import it.uniroma1.lcl.studstats.dati.rapporti.TipoRapporto;
 
 import java.util.Collection;
 
-@FunctionalInterface
 public interface Analizzatore
 {
 	Rapporto generaRapporto(Collection<Studente> studs);
+
 
 	/**
 	 * Restituisce il tipo di rapporto che genera l’analizzatore
@@ -18,18 +22,6 @@ public interface Analizzatore
 	 * questo secondo caso non sara’ possibile utilizzare le lambda
 	 * per implementare gli analizzatori base.
 	 */
-	/*
-	default TipoRapporto getTipo()
-	{
-		da implementare
-	}*/
+	TipoRapporto getTipo();
 
-
-	/* TODO:
-	generaRapporti -> PER PRE-CHECKARE IL TIPO DI RITORNO DI UN ANALIZZATORE QUALSIASI AGGIUNGO L'ANNOTAZIONE @TIPORAPPORTO (?)
-	COSI' NON DEVO ESEGUIRE IL METODO GENERARAPPORTO() PER CONTROLLARE POI IL TIPO DI RITORNO
-	FACCIO UNA CLASSE/ENUM/INTERFACE CON CAMPI STATICI E GENERO GLI ANALIZZATORI CON LE LAMBDA (I PRIMI 4)
-	PER L'ULTIMO ANALIZZATORE DEVO CREARE PER FORZA UNA CLASSE
-	VEDI GLI STREAM PER IL SORTING DELLE MAPPE DEI RAPPORTI
-	 */
 }

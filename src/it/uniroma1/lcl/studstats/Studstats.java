@@ -1,15 +1,15 @@
 package it.uniroma1.lcl.studstats;
 
-import it.uniroma1.lcl.studstats.dati.Analizzatore;
-import it.uniroma1.lcl.studstats.dati.Rapporto;
+import it.uniroma1.lcl.studstats.analizzatori.Analizzatore;
+import it.uniroma1.lcl.studstats.analizzatori.AnalizzatoreAnnoDiploma;
 import it.uniroma1.lcl.studstats.dati.Studente;
-import it.uniroma1.lcl.studstats.dati.TipoRapporto;
+import it.uniroma1.lcl.studstats.dati.rapporti.PossibiliRapporti;
+import it.uniroma1.lcl.studstats.dati.rapporti.Rapporto;
+import it.uniroma1.lcl.studstats.dati.rapporti.TipoRapporto;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 public class Studstats implements AggregatoreStatistico
 {
@@ -25,17 +25,18 @@ public class Studstats implements AggregatoreStatistico
 
 	public static void main(String[] args)
 	{
-		Studstats stats1 = fromFile("src/IMMATRICOLATI.csv");
-		System.out.println(stats1);
+		Studstats stats1 = fromFile("IMMATRICOLATI_INFORMATICA_SAPIENZA_2018_randomizzato.csv");
+		stats1.add(new AnalizzatoreAnnoDiploma());
+		System.out.println(stats1.generaRapporti(PossibiliRapporti.ANNO_DIPLOMA));
 	}
 
 	@Override
 	public String toString()
 	{
-		String s = "";
+		StringBuilder s = new StringBuilder();
 		for (Studente stud : studSet)
-			s += stud.toString() + "\n";
-		return s;
+			s.append(stud.toString()).append("\n");
+		return s.toString();
 	}
 
 	@Override
@@ -43,6 +44,9 @@ public class Studstats implements AggregatoreStatistico
 
 	@Override
 	public void add(Analizzatore an) { listaAnalizzatori.add(an); }
+
+	@Override
+	public void addAll(Analizzatore[] analizzatori) { listaAnalizzatori.addAll(Arrays.asList(analizzatori)); }
 
 	@Override
 	public List<Rapporto> generaRapporti(TipoRapporto... tipiRapporto)
@@ -55,7 +59,16 @@ public class Studstats implements AggregatoreStatistico
 			return toReturn;
 		}
 		//check sugli analizzatori in tiporapporto (else implicito)
+		Set<TipoRapporto> tipoRapportoArrayList = Set.of(tipiRapporto);
+		for (Analizzatore an : listaAnalizzatori)
+			if (tipoRapportoArrayList.contains(an.getTipo()))
+				toReturn.add(an.generaRapporto(studSet));
+		return toReturn;
+	}
 
-
+	@Override
+	public int numeroAnalizzatori()
+	{
+		return listaAnalizzatori.size();
 	}
 }

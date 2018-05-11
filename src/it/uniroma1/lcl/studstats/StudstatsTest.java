@@ -1,15 +1,11 @@
 package it.uniroma1.lcl.studstats;
 
+import it.uniroma1.lcl.studstats.analizzatori.*;
+import it.uniroma1.lcl.studstats.dati.rapporti.Rapporto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
-import it.uniroma1.lcl.studstats.dati.AnalizzatoreSegretoSegretissimo;
-import it.uniroma1.lcl.studstats.dati.AnalizzatoreSesso;
-import it.uniroma1.lcl.studstats.dati.AnalizzatoreStudentiVotoMaggiore;
-import it.uniroma1.lcl.studstats.dati.AnalizzatoreVoto;
-import it.uniroma1.lcl.studstats.dati.Analizzatori;
-import it.uniroma1.lcl.studstats.dati.Rapporto;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Classe di test

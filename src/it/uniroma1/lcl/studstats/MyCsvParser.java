@@ -1,8 +1,8 @@
 package it.uniroma1.lcl.studstats;
 
 import it.uniroma1.lcl.studstats.dati.Studente;
+
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -94,10 +94,10 @@ public class MyCsvParser
 				{
 					sarr[c] = sarr[c].replaceFirst(sarr[c].substring(0, 1), sarr[c].substring(0, 1).toUpperCase());
 				}
-				String news = "";
+				StringBuilder news = new StringBuilder();
 				for (String s2 : sarr)
-					news += s2 + " ";
-				array.set(i, news);
+					news.append(s2).append(" ");
+				array.set(i, news.toString().trim());
 			}
 		}
 	}

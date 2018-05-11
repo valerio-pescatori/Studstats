@@ -1,10 +1,11 @@
 package it.uniroma1.lcl.studstats;
 
-import java.util.List;
-import it.uniroma1.lcl.studstats.dati.Analizzatore;
-import it.uniroma1.lcl.studstats.dati.Rapporto;
+import it.uniroma1.lcl.studstats.analizzatori.Analizzatore;
 import it.uniroma1.lcl.studstats.dati.Studente;
-import it.uniroma1.lcl.studstats.dati.TipoRapporto;
+import it.uniroma1.lcl.studstats.dati.rapporti.Rapporto;
+import it.uniroma1.lcl.studstats.dati.rapporti.TipoRapporto;
+
+import java.util.List;
 
 
 public interface AggregatoreStatistico
@@ -33,4 +34,6 @@ public interface AggregatoreStatistico
 	 * Restituisce il numero di analizzatori memorizzati
 	 */
 	int numeroAnalizzatori();
+
+	void addAll(Analizzatore[] analizzatori);
 }
