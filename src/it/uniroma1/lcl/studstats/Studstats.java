@@ -2,6 +2,7 @@ package it.uniroma1.lcl.studstats;
 
 import it.uniroma1.lcl.studstats.analizzatori.Analizzatore;
 import it.uniroma1.lcl.studstats.analizzatori.AnalizzatoreAnnoDiploma;
+import it.uniroma1.lcl.studstats.analizzatori.AnalizzatoreIstituti;
 import it.uniroma1.lcl.studstats.dati.Studente;
 import it.uniroma1.lcl.studstats.dati.rapporti.PossibiliRapporti;
 import it.uniroma1.lcl.studstats.dati.rapporti.Rapporto;
@@ -22,13 +23,6 @@ public class Studstats implements AggregatoreStatistico
 	public static Studstats fromFile(String source) { return new Studstats(MyCsvParser.parse(Paths.get(source))); }
 
 	public static Studstats fromFile(Path path) { return new Studstats(MyCsvParser.parse(path));}
-
-	public static void main(String[] args)
-	{
-		Studstats stats1 = fromFile("IMMATRICOLATI_INFORMATICA_SAPIENZA_2018_randomizzato.csv");
-		stats1.add(new AnalizzatoreAnnoDiploma());
-		System.out.println(stats1.generaRapporti(PossibiliRapporti.ANNO_DIPLOMA));
-	}
 
 	@Override
 	public String toString()
@@ -70,5 +64,12 @@ public class Studstats implements AggregatoreStatistico
 	public int numeroAnalizzatori()
 	{
 		return listaAnalizzatori.size();
+	}
+
+	public static void main(String[] args)
+	{
+		Studstats stats1 = fromFile("IMMATRICOLATI_INFORMATICA_SAPIENZA_2018_randomizzato.csv");
+		stats1.add(new AnalizzatoreIstituti());
+		System.out.println(stats1.generaRapporti(PossibiliRapporti.ISTITUTI));
 	}
 }

@@ -23,5 +23,4 @@ public interface Analizzatore
 	 * per implementare gli analizzatori base.
 	 */
 	TipoRapporto getTipo();
-
 }

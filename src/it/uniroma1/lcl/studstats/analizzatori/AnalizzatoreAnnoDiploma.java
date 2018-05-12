@@ -5,7 +5,10 @@ import it.uniroma1.lcl.studstats.dati.rapporti.PossibiliRapporti;
 import it.uniroma1.lcl.studstats.dati.rapporti.Rapporto;
 import it.uniroma1.lcl.studstats.dati.rapporti.TipoRapporto;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
