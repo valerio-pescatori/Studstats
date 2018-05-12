@@ -25,8 +25,7 @@ public class AnalizzatoreIstituti implements Analizzatore
 		HashMap<String, Long> map = studs.stream().map(x -> x.get("Istituto Superiore")).collect(Collectors.groupingBy(Function
 				.identity(), HashMap::new, Collectors.counting()));
 		return new Rapporto(Map.of("ISTITUTI", map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (a,b) -> a  , LinkedHashMap::new ))),
-				PossibiliRapporti
-				.ISTITUTI);
+				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (a, b) -> a, LinkedHashMap::new))),
+				getTipo());
 	}
 }

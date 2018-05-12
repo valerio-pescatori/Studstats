@@ -35,5 +35,9 @@ public interface AggregatoreStatistico
 	 */
 	int numeroAnalizzatori();
 
-	void addAll(Analizzatore[] analizzatori);
+	default void addAll(Analizzatore... analizzatori)
+	{
+		for (Analizzatore a : analizzatori) add(a);
+	}
+
 }

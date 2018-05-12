@@ -24,8 +24,8 @@ public interface Analizzatori
 		return new AnalizzatoreStudentiVotoMaggiore(voto);
 	}
 
-	/*static Analizzatore studentiVotoMaggiore(int voto, Analizzatore a) {
-		return new AnalizzatoreStudentiVotoMaggiore(voto, a); }*/
+	static Analizzatore studentiVotoMaggiore(int voto, Analizzatore a) {
+		return new AnalizzatoreStudentiVotoMaggiore(voto, a); }
 
 	static Analizzatore[] allBasic()
 	{

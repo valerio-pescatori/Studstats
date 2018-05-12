@@ -1,8 +1,6 @@
 package it.uniroma1.lcl.studstats;
 
-import it.uniroma1.lcl.studstats.analizzatori.Analizzatore;
-import it.uniroma1.lcl.studstats.analizzatori.AnalizzatoreAnnoDiploma;
-import it.uniroma1.lcl.studstats.analizzatori.AnalizzatoreIstituti;
+import it.uniroma1.lcl.studstats.analizzatori.*;
 import it.uniroma1.lcl.studstats.dati.Studente;
 import it.uniroma1.lcl.studstats.dati.rapporti.PossibiliRapporti;
 import it.uniroma1.lcl.studstats.dati.rapporti.Rapporto;
@@ -40,9 +38,6 @@ public class Studstats implements AggregatoreStatistico
 	public void add(Analizzatore an) { listaAnalizzatori.add(an); }
 
 	@Override
-	public void addAll(Analizzatore[] analizzatori) { listaAnalizzatori.addAll(Arrays.asList(analizzatori)); }
-
-	@Override
 	public List<Rapporto> generaRapporti(TipoRapporto... tipiRapporto)
 	{
 		List<Rapporto> toReturn = new ArrayList<>();
@@ -69,7 +64,7 @@ public class Studstats implements AggregatoreStatistico
 	public static void main(String[] args)
 	{
 		Studstats stats1 = fromFile("IMMATRICOLATI_INFORMATICA_SAPIENZA_2018_randomizzato.csv");
-		stats1.add(new AnalizzatoreIstituti());
-		System.out.println(stats1.generaRapporti(PossibiliRapporti.ISTITUTI));
+		stats1.addAll(new AnalizzatoreVoto());
+		System.out.println(stats1.generaRapporti(PossibiliRapporti.VOTO));
 	}
 }

@@ -6,5 +6,6 @@ public enum PossibiliRapporti implements TipoRapporto
 	ISTITUTI,
 	SESSO,
 	VOTO,
+	TITOLO,
 	STUDENTI_VOTO_MAGGIORE;
 }

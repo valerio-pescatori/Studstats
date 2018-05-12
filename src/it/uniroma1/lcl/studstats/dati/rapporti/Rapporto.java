@@ -13,8 +13,6 @@ public class Rapporto
 		this.mappaRapporto = mappaRapporto;
 	}
 
-	public TipoRapporto getTipoRapporto() { return tipoRapporto; }
-
 	@Override
 	public String toString() { return mappaRapporto.toString(); }
 }
