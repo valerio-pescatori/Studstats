@@ -18,8 +18,11 @@ public class AnalizzatoreAnnoDiploma implements Analizzatore
 	}
 
 	@Override
-	public Rapporto generaRapporto(Collection<Studente> studs) { return new Rapporto(Map.of("ANNI_DIPLOMA",
-			studs.stream().map(x -> x.get("Anno Diploma")).sorted(Comparator.reverseOrder())
-			.collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))),
-			PossibiliRapporti.ANNO_DIPLOMA); }
+	public Rapporto generaRapporto(Collection<Studente> studs)
+	{
+		return new Rapporto(Map.of("ANNI_DIPLOMA",
+				studs.stream().map(x -> x.get("Anno Diploma")).sorted(Comparator.reverseOrder())
+						.collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))),
+				PossibiliRapporti.ANNO_DIPLOMA);
+	}
 }
