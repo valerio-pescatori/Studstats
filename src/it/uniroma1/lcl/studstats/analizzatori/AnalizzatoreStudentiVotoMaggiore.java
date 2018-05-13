@@ -6,6 +6,7 @@ import it.uniroma1.lcl.studstats.dati.rapporti.Rapporto;
 import it.uniroma1.lcl.studstats.dati.rapporti.TipoRapporto;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 public class AnalizzatoreStudentiVotoMaggiore implements Analizzatore
 {
@@ -19,12 +20,10 @@ public class AnalizzatoreStudentiVotoMaggiore implements Analizzatore
 		this.voto=voto;
 		this.analizzatore=analizzatore;
 	}
-	// TODO: implementa il generaRapporto
+
 	@Override
-	public Rapporto generaRapporto(Collection<Studente> studs)
-	{
-		return null;
-	}
+	public Rapporto generaRapporto(Collection<Studente> studs) { return analizzatore.generaRapporto(studs.stream().
+			filter(x -> Integer.parseInt(x.get("Voto"))>=voto).collect(Collectors.toSet())); }
 
 	@Override
 	public TipoRapporto getTipo()
