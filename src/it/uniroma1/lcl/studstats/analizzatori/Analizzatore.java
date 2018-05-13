@@ -8,7 +8,8 @@ import java.util.Collection;
 
 public interface Analizzatore
 {
-	Rapporto generaRapporto(Collection<Studente> studs);
+	Rapporto generaRapporto(Collection<Studente> studs)
+			;
 
 
 	/**

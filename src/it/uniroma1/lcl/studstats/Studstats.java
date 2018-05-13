@@ -64,7 +64,10 @@ public class Studstats implements AggregatoreStatistico
 	public static void main(String[] args)
 	{
 		Studstats stats1 = fromFile("IMMATRICOLATI_INFORMATICA_SAPIENZA_2018_randomizzato.csv");
-		stats1.addAll(new AnalizzatoreVoto());
-		System.out.println(stats1.generaRapporti(PossibiliRapporti.VOTO));
+		stats1.addAll(Analizzatori.allBasic());
+		List<Rapporto> res = stats1.generaRapporti(PossibiliRapporti.ANNO_DIPLOMA, PossibiliRapporti.VOTO,
+			PossibiliRapporti.TITOLO, PossibiliRapporti.ISTITUTI, PossibiliRapporti.SESSO);
+		res.forEach(System.out::println);
+
 	}
 }

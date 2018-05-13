@@ -6,24 +6,21 @@ import it.uniroma1.lcl.studstats.dati.rapporti.Rapporto;
 import it.uniroma1.lcl.studstats.dati.rapporti.TipoRapporto;
 
 import java.util.Collection;
-import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.groupingBy;
 
 public class AnalizzatoreAnnoDiploma implements Analizzatore
 {
 	@Override
-	public TipoRapporto getTipo()
+	public Rapporto generaRapporto(Collection<Studente> studs)
 	{
-		return PossibiliRapporti.ANNO_DIPLOMA;
+		return new Rapporto(Map.of("ANNI_DIPLOMA", studs.stream().sorted((a, b) -> b.get("Anno Diploma").compareTo(a.get("Anno " +
+				"Diploma"))).collect(groupingBy(x -> x.get("Anno Diploma"), LinkedHashMap::new, counting()))), getTipo());
 	}
 
 	@Override
-	public Rapporto generaRapporto(Collection<Studente> studs)
-	{
-		return new Rapporto(Map.of("ANNI_DIPLOMA", studs.stream().map(x -> x.get("Anno Diploma")).sorted(Comparator.reverseOrder())
-				.collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))), getTipo());
-	}
+	public TipoRapporto getTipo() { return PossibiliRapporti.ANNO_DIPLOMA; }
 }
