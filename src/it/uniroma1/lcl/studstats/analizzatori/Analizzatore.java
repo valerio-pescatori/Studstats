@@ -6,10 +6,16 @@ import it.uniroma1.lcl.studstats.dati.rapporti.TipoRapporto;
 
 import java.util.Collection;
 
+/**
+ * Interfaccia Analizzatore che fornisce due metodi:
+ * {@link Analizzatore#generaRapporto generaRapporto} che deve specificare come deve essere formato l'analizzatore
+ * e {@link Analizzatore#getTipo() getTipo} che deve ritornare il tipo specifico di questo Analizzatore.
+ * N.B.: il
+ */
 public interface Analizzatore
 {
-	Rapporto generaRapporto(Collection<Studente> studs)
-			;
+
+	Rapporto generaRapporto(Collection<Studente> studs);
 
 
 	/**
