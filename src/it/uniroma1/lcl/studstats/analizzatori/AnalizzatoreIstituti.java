@@ -18,7 +18,7 @@ public class AnalizzatoreIstituti implements Analizzatore
 	public Rapporto generaRapporto(Collection<Studente> studs)
 	{
 		HashMap<String, Long> map = groupAndCountBy(studs, "Istituto Superiore");
-		return new Rapporto(Map.of("ISTITUTI", orderByValueReversed(map)), getTipo());
+		return new Rapporto<String, HashMap<String, Long>>(Map.of("ISTITUTI", orderByValueReversed(map)), getTipo());
 	}
 
 	@Override

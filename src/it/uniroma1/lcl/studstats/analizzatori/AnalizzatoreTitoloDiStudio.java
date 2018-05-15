@@ -6,6 +6,7 @@ import it.uniroma1.lcl.studstats.dati.rapporti.Rapporto;
 import it.uniroma1.lcl.studstats.dati.rapporti.TipoRapporto;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 
 import static it.uniroma1.lcl.studstats.analizzatori.Analizzators.groupAndCountBy;
@@ -17,7 +18,7 @@ public class AnalizzatoreTitoloDiStudio implements Analizzatore
 	public Rapporto generaRapporto(Collection<Studente> studs)
 	{
 		Map<String, Long> map = groupAndCountBy(studs, "Titolo Di Studio");
-		return new Rapporto(Map.of("TITOLO", orderByValueReversed(map)),getTipo());
+		return new Rapporto<String, HashMap<String, Long>> (Map.of("TITOLO", orderByValueReversed(map)),getTipo());
 	}
 
 	@Override

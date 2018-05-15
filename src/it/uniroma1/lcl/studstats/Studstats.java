@@ -2,9 +2,10 @@ package it.uniroma1.lcl.studstats;
 
 import it.uniroma1.lcl.studstats.analizzatori.*;
 import it.uniroma1.lcl.studstats.dati.Studente;
-import it.uniroma1.lcl.studstats.dati.rapporti.PossibiliRapporti;
+import it.uniroma1.lcl.studstats.dati.rapporti.RapportiAggiuntivi;
 import it.uniroma1.lcl.studstats.dati.rapporti.Rapporto;
 import it.uniroma1.lcl.studstats.dati.rapporti.TipoRapporto;
+import it.uniroma1.lcl.studstats.util.MyCsvParser;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -64,9 +65,8 @@ public class Studstats implements AggregatoreStatistico
 	public static void main(String[] args)
 	{
 		Studstats stats1 = fromFile("IMMATRICOLATI_INFORMATICA_SAPIENZA_2018_randomizzato.csv");
-		stats1.addAll(Analizzatori.allBasic());
-		List<Rapporto> res = stats1.generaRapporti(PossibiliRapporti.ANNO_DIPLOMA, PossibiliRapporti.VOTO,
-			PossibiliRapporti.TITOLO, PossibiliRapporti.ISTITUTI, PossibiliRapporti.SESSO);
+		stats1.addAll(new AnalizzatoreBonus());
+		List<Rapporto> res = stats1.generaRapporti(RapportiAggiuntivi.RAPPORTO_SEGRETO);
 		res.forEach(System.out::println);
 
 	}
