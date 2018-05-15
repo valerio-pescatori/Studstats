@@ -8,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 /**
  * Classe parser che con il metodo statico {@link MyCsvParser#parse(Path, String) parse} permette di parsare un documento *.csv
@@ -23,31 +24,31 @@ public class MyCsvParser
 	 * @param p il {@link Path} del documento
 	 * @return l'insieme degli studenti se il documento è valido, {@code null} altrimenti.
 	 */
-	public static HashSet<Studente> parse(Path p)
+	public static List<Studente> parse(Path p)
 	{
 		return parse(p, ";");
 	}
 
 	/**
-	 * Esegue il parsing del documento che contiene le informazioni sugli studenti, generando un {@link HashSet} contenente oggetti di tipo {@link Studente}.
+	 * Esegue il parsing del documento che contiene le informazioni sugli studenti, generando un {@link HashSet} contenente oggetti
+	 * di tipo {@link Studente}.
 	 *
 	 * @param p   il {@link Path} del documento
 	 * @param sep il separatore dei campi nel documento
 	 * @return l'insieme degli studenti se il documento è valido, {@code null} altrimenti.
 	 */
-	public static HashSet<Studente> parse(Path p, String sep)
+	public static List<Studente> parse(Path p, String sep)
 	{
-		try(BufferedReader fileReader = Files.newBufferedReader(p))
+		try (BufferedReader fileReader = Files.newBufferedReader(p))
 		{
 			String firstLine = "";
 			ArrayList<String> keys = new ArrayList<>();
-			HashSet<Studente> toRet = new HashSet<>();
-
+			List<Studente> toRet = new ArrayList<>();
 			/* mi genero un array contenente le chiavi della mappa di ogni studente
 			   in questo modo la mappa di ogni studente avrà tante chiavi quanti sono i campi della tabella */
-			if (fileReader.ready())
-				firstLine = fileReader.readLine();
+			if (fileReader.ready()) firstLine = fileReader.readLine();
 			String[] values = firstLine.split(sep);
+			if(values[0] == "") throw new IOException("File vuoto");
 			for (String value : values)
 				keys.add(value);
 			keyNormalizer(keys);
@@ -68,8 +69,8 @@ public class MyCsvParser
 		catch (IOException e)
 		{
 			System.out.println(e);
+			return new ArrayList<>();
 		}
-		return null;
 	}
 
 	/**
@@ -84,8 +85,7 @@ public class MyCsvParser
 	{
 		for (int i = 0; i < array.size(); i++)
 		{
-			if (array.get(i).toLowerCase().contains("voto"))
-				array.set(i, "Voto");
+			if (array.get(i).toLowerCase().contains("voto")) array.set(i, "Voto");
 			else
 			{
 				String s = array.get(i).toLowerCase();

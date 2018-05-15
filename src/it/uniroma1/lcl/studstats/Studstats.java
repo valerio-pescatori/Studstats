@@ -13,11 +13,10 @@ import java.util.*;
 
 public class Studstats implements AggregatoreStatistico
 {
-	private HashSet<Studente> studSet;
+	private List<Studente> studList;
 	private List<Analizzatore> listaAnalizzatori = new ArrayList<>();
-	private List<Rapporto> listaRapporti = new ArrayList<>();
 
-	private Studstats(HashSet<Studente> studSet) { this.studSet = studSet; }
+	private Studstats(List<Studente> studList) { this.studList = studList; }
 
 	public static Studstats fromFile(String source) { return new Studstats(MyCsvParser.parse(Paths.get(source))); }
 
@@ -27,13 +26,13 @@ public class Studstats implements AggregatoreStatistico
 	public String toString()
 	{
 		StringBuilder s = new StringBuilder();
-		for (Studente stud : studSet)
+		for (Studente stud : studList)
 			s.append(stud.toString()).append("\n");
 		return s.toString();
 	}
 
 	@Override
-	public void add(Studente s) { studSet.add(s); }
+	public void add(Studente s) { studList.add(s); }
 
 	@Override
 	public void add(Analizzatore an) { listaAnalizzatori.add(an); }
@@ -45,14 +44,14 @@ public class Studstats implements AggregatoreStatistico
 		if (tipiRapporto.length == 0)
 		{
 			for (Analizzatore an : listaAnalizzatori)
-				toReturn.add(an.generaRapporto(studSet));
+				toReturn.add(an.generaRapporto(studList));
 			return toReturn;
 		}
 		//check sugli analizzatori in tiporapporto (else implicito)
-		Set<TipoRapporto> tipoRapportoArrayList = Set.of(tipiRapporto);
+		Set<TipoRapporto> tipoRapportoSet = Set.of(tipiRapporto);
 		for (Analizzatore an : listaAnalizzatori)
-			if (tipoRapportoArrayList.contains(an.getTipo()))
-				toReturn.add(an.generaRapporto(studSet));
+			if (tipoRapportoSet.contains(an.getTipo()))
+				toReturn.add(an.generaRapporto(studList));
 		return toReturn;
 	}
 
@@ -64,10 +63,9 @@ public class Studstats implements AggregatoreStatistico
 
 	public static void main(String[] args)
 	{
-		Studstats stats1 = fromFile("IMMATRICOLATI_INFORMATICA_SAPIENZA_2018_randomizzato.csv");
+		Studstats stats1 = fromFile("src/dasd.csv");
 		stats1.addAll(new AnalizzatoreBonus());
 		List<Rapporto> res = stats1.generaRapporti(RapportiAggiuntivi.RAPPORTO_SEGRETO);
 		res.forEach(System.out::println);
-
 	}
 }

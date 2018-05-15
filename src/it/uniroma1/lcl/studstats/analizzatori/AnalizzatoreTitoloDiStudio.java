@@ -18,7 +18,7 @@ public class AnalizzatoreTitoloDiStudio implements Analizzatore
 	public Rapporto generaRapporto(Collection<Studente> studs)
 	{
 		Map<String, Long> map = groupAndCountBy(studs, "Titolo Di Studio");
-		return new Rapporto<String, HashMap<String, Long>> (Map.of("TITOLO", orderByValueReversed(map)),getTipo());
+		return new Rapporto<String, HashMap<String, Long>>(Map.of("TITOLO", orderByValueReversed(map)), getTipo());
 	}
 
 	@Override

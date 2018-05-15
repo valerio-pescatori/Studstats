@@ -17,13 +17,16 @@ public class AnalizzatoreStudentiVotoMaggiore implements Analizzatore
 
 	public AnalizzatoreStudentiVotoMaggiore(int voto, Analizzatore analizzatore)
 	{
-		this.voto=voto;
-		this.analizzatore=analizzatore;
+		this.voto = voto;
+		this.analizzatore = analizzatore;
 	}
 
 	@Override
-	public Rapporto generaRapporto(Collection<Studente> studs) { return analizzatore.generaRapporto(studs.stream().
-			filter(x -> Integer.parseInt(x.get("Voto"))>=voto).collect(Collectors.toSet())); }
+	public Rapporto generaRapporto(Collection<Studente> studs)
+	{
+		return analizzatore.generaRapporto(studs.stream().
+				filter(x -> Integer.parseInt(x.get("Voto")) >= voto).collect(Collectors.toSet()));
+	}
 
 	@Override
 	public TipoRapporto getTipo()

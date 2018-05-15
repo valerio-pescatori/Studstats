@@ -23,6 +23,7 @@ import java.util.Set;
  * Si trasforma poi il numero in percentuale, relativamente al totale di studenti per il titolo di studio associato.<br>
  * Per poter trattare il numero come fosse un normale double e poi essere trasformato in percentuale, viene utilizzata la classe
  * {@link DoublePercentage} creata appositamente per questo.
+ *
  * @author Valerio Pescatori
  */
 public class AnalizzatoreBonus implements Analizzatore

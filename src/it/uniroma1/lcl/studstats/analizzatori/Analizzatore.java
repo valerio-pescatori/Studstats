@@ -14,21 +14,20 @@ import java.util.Collection;
  */
 public interface Analizzatore
 {
-
+	/**
+	 * Genera un {@link Rapporto} su una Collection di {@link Studente}
+	 *
+	 * @param studs la Collection sulla quale generare il rapporto
+	 * @return il Rapporto.
+	 */
 	Rapporto generaRapporto(Collection<Studente> studs);
 
-
 	/**
-	 * Restituisce il tipo di rapporto che genera l’analizzatore
-	 * NOTA BENE: questo metodo può essere implementato di default
-	 * utilizzando le annotazioni che saranno viste a lezione
-	 * venerdì (e, per la teledidattica e gli assenti, spiegate su
-	 * diapositive) OPPURE può essere lasciato astratto e
-	 * implementato in ciascuna sottoclasse (richiedendo la
-	 * specifica in ciascuna implementazione di Analizzatore). In
-	 * questo secondo caso non sara’ possibile utilizzare le lambda
-	 * per implementare gli analizzatori base.
+	 * Ritorna il tipo del Rapporto generato tramite il metodo {@link Analizzatore#generaRapporto(Collection) generaRapporto} <br>
+	 * {@link TipoRapporto} è un interfaccia vuota;  la sua utilità è che con essa si può realizzare il design pattern
+	 * dell'enum estensibile.<br>
+	 * Cioè se si vuole un estendere un' enum, basta creare un'altra enum che estende la stessa interfaccia e
+	 * dall'esterno di potrà accedere ai campi sia di una che dell'altra enum utilizzando un riferimento di tipo TipoRapporto.
 	 */
 	TipoRapporto getTipo();
-
 }

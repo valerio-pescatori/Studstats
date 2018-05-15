@@ -25,7 +25,7 @@ public class Analizzators
 	 *
 	 * @param studs collezione della quale si vuole ottenere la mappa
 	 * @param field il campo del quale si vogliono contare le occorrenze dei diversi valori
-	 * @param <T> il tipo della Collection alla quale si vuole applicare il metodo (Studente o una sua sottoclasse)
+	 * @param <T>   il tipo della Collection alla quale si vuole applicare il metodo (Studente o una sua sottoclasse)
 	 * @return la mappa sopra specificata.
 	 */
 	public static <T extends Studente> HashMap<String, Long> groupAndCountBy(Collection<T> studs, String field)
@@ -38,14 +38,14 @@ public class Analizzators
 	 * valore.</p>
 	 * <p>Restituisce una mappa ordinata secondo il criterio specificato in {@code comparator} le cui chiavi sono i diversi
 	 * valori del campo {@code field} e i cui valori sono le occorrenze di tali valori.</p>
+	 *
 	 * @param studs collezione della quale si vuole ottenere la mappa
 	 * @param field il campo per il quale si vuole raggruppare e contare
-	 * @param <T> il tipo della Collection alla quale si vuole applicare il metodo (Studente o una sua sottoclasse)
+	 * @param <T>   il tipo della Collection alla quale si vuole applicare il metodo (Studente o una sua sottoclasse)
 	 * @return la mappa sopra specificata
 	 */
 	public static <T extends Studente> LinkedHashMap<String, Long> groupAndCountBySorted(Collection<T> studs, String field,
-	                                                                                   Comparator<T>
-			comparator)
+	                                                                                     Comparator<T> comparator)
 	{
 		return studs.stream().sorted(comparator).collect(groupingBy(x -> x.get(field), LinkedHashMap::new, counting()));
 	}
@@ -53,12 +53,13 @@ public class Analizzators
 	/**
 	 * Metodo statico che prende in input una mappa e restituisce una {@code LinkedHashMap} ordinata per valori in modo decrescente
 	 * (usando {@link Comparator#reverseOrder() reverseOrder}).
+	 *
 	 * @param map la mappa da ordinare
 	 * @return la mappa ordinata per valori in modo decrescente.
 	 */
-	static  <K, V extends Comparable<V>> LinkedHashMap<K, V> orderByValueReversed(Map<K, V> map)
+	static <K, V extends Comparable<V>> LinkedHashMap<K, V> orderByValueReversed(Map<K, V> map)
 	{
-		return map.entrySet().stream().sorted(Map.Entry.comparingByValue(reverseOrder()))
-				.collect(toMap(Map.Entry::getKey, Map.Entry::getValue, (x, y) -> x, LinkedHashMap::new));
+		return map.entrySet().stream().sorted(Map.Entry.comparingByValue(reverseOrder())).collect(toMap(Map.Entry::getKey, Map
+				.Entry::getValue, (x, y) -> x, LinkedHashMap::new));
 	}
 }

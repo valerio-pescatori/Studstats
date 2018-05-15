@@ -23,21 +23,5 @@ public class Studente
 	}
 
 	public String get(String key) { return map.getOrDefault(key, ""); }
-
-	@Override
-	public int hashCode() { return map.hashCode(); }
-
-	@Override
-	public boolean equals(Object obj)
-	{
-		Studente s;
-		if (obj == null) return false;
-		if (obj instanceof Studente)
-		{
-			s = (Studente) obj;
-			return map.equals(s.map);
-		}
-		return false;
-	}
 }
 

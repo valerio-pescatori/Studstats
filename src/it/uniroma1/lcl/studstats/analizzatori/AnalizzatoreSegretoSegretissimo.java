@@ -11,14 +11,8 @@ import java.util.HashMap;
 public class AnalizzatoreSegretoSegretissimo implements Analizzatore
 {
 	@Override
-	public Rapporto generaRapporto(Collection<Studente> studs)
-	{
-		return new Rapporto<>(new HashMap<String, String>(), getTipo());
-	}
+	public Rapporto generaRapporto(Collection<Studente> studs) { return new Rapporto<>(new HashMap<String, String>(), getTipo()); }
 
 	@Override
-	public TipoRapporto getTipo()
-	{
-		return PossibiliRapporti.ANNO_DIPLOMA;
-	}
+	public TipoRapporto getTipo() { return PossibiliRapporti.ANNO_DIPLOMA; }
 }
