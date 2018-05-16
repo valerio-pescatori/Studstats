@@ -1,9 +1,7 @@
-package it.uniroma1.lcl.studstats.analizzatori;
+package it.uniroma1.lcl.studstats.dati;
 
-import it.uniroma1.lcl.studstats.dati.Studente;
 import it.uniroma1.lcl.studstats.dati.rapporti.PossibiliRapporti;
-import it.uniroma1.lcl.studstats.dati.rapporti.Rapporto;
-import it.uniroma1.lcl.studstats.dati.rapporti.TipoRapporto;
+import it.uniroma1.lcl.studstats.util.AbstractAnalizzatore;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -14,7 +12,7 @@ import java.util.Map;
 import static java.util.stream.Collectors.averagingDouble;
 import static java.util.stream.Collectors.toList;
 
-public class AnalizzatoreVoto implements Analizzatore
+public class AnalizzatoreVoto extends AbstractAnalizzatore implements Analizzatore
 {
 	@Override
 	public Rapporto generaRapporto(Collection<Studente> studs)
@@ -28,8 +26,11 @@ public class AnalizzatoreVoto implements Analizzatore
 		int size = studList.size();
 		if (size % 2 == 0) votoMediano = (studList.get(size / 2) + studList.get((size / 2) + 1)) / 2;
 		else votoMediano = studList.get(size / 2);
-		return new Rapporto<String, Number>(Map.of("VOTO_MEDIO", new BigDecimal(votoMedio).setScale(2, RoundingMode.FLOOR),
-				"VOTO_MAX", studList.get(size - 1), "VOTO_MIN", studList.get(0), "VOTO_MEDIANO", votoMediano), getTipo());
+		return new Rapporto(Map.of("VOTO",Map.of(
+				"VOTO_MEDIO", new BigDecimal(votoMedio).setScale(2, RoundingMode.FLOOR),
+				"VOTO_MAX", studList.get(size - 1),
+				"VOTO_MIN",
+				studList.get(0), "VOTO_MEDIANO", votoMediano)), getTipo());
 	}
 
 	@Override

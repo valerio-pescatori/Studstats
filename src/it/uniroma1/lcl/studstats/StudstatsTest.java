@@ -1,11 +1,8 @@
 package it.uniroma1.lcl.studstats;
 
-import it.uniroma1.lcl.studstats.analizzatori.*;
-import it.uniroma1.lcl.studstats.dati.rapporti.Rapporto;
+import it.uniroma1.lcl.studstats.dati.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.nio.file.Paths;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -52,7 +49,7 @@ class StudstatsTest
 		Rapporto r = stats.generaRapporti(new AnalizzatoreSesso().getTipo())
 				.get(0);
 		System.out.println(r);
-		assertEquals(r.toString(), "{SESSO={F=26, M=288}}");
+		assertEquals("{SESSO={F=26, M=288}}", r.toString());
 	}
 
 	@Test

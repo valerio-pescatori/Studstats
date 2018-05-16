@@ -1,17 +1,16 @@
-package it.uniroma1.lcl.studstats.analizzatori;
+package it.uniroma1.lcl.studstats.dati;
 
-import it.uniroma1.lcl.studstats.dati.Studente;
 import it.uniroma1.lcl.studstats.dati.rapporti.PossibiliRapporti;
-import it.uniroma1.lcl.studstats.dati.rapporti.Rapporto;
-import it.uniroma1.lcl.studstats.dati.rapporti.TipoRapporto;
+import it.uniroma1.lcl.studstats.util.AbstractAnalizzatore;
 
 import java.util.Collection;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class AnalizzatoreStudentiVotoMaggiore implements Analizzatore
+public class AnalizzatoreStudentiVotoMaggiore extends AbstractAnalizzatore implements Analizzatore
 {
-	int voto;
-	Analizzatore analizzatore;
+	private int voto;
+	private Analizzatore analizzatore;
 
 	public AnalizzatoreStudentiVotoMaggiore(int voto) { this(voto, new AnalizzatoreSesso()); }
 
@@ -32,5 +31,20 @@ public class AnalizzatoreStudentiVotoMaggiore implements Analizzatore
 	public TipoRapporto getTipo()
 	{
 		return PossibiliRapporti.STUDENTI_VOTO_MAGGIORE;
+	}
+
+	@Override
+	public int hashCode() { return Objects.hash(analizzatore, voto); }
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		AnalizzatoreStudentiVotoMaggiore an;
+		if ( obj instanceof AnalizzatoreStudentiVotoMaggiore)
+		{
+			an = (AnalizzatoreStudentiVotoMaggiore) obj;
+			return this.voto==an.voto && this.analizzatore==an.analizzatore;
+		}
+		return false;
 	}
 }

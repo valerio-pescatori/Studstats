@@ -1,15 +1,11 @@
-package it.uniroma1.lcl.studstats.analizzatori;
-
-import it.uniroma1.lcl.studstats.dati.Studente;
-import it.uniroma1.lcl.studstats.dati.rapporti.Rapporto;
-import it.uniroma1.lcl.studstats.dati.rapporti.TipoRapporto;
+package it.uniroma1.lcl.studstats.dati;
 
 import java.util.Collection;
 
 /**
  * Interfaccia Analizzatore che fornisce due metodi:
- * {@link Analizzatore#generaRapporto generaRapporto} che deve specificare come deve essere formato l'analizzatore
- * e {@link Analizzatore#getTipo() getTipo} che deve ritornare il tipo specifico di questo Analizzatore.
+ * {@link Analizzatore#generaRapporto(Collection)} che deve specificare come deve essere formato l'analizzatore
+ * e {@link Analizzatore#getTipo()} che deve ritornare il tipo specifico di questo Analizzatore.
  * N.B.: il
  */
 public interface Analizzatore

@@ -1,4 +1,4 @@
-package it.uniroma1.lcl.studstats.analizzatori;
+package it.uniroma1.lcl.studstats.dati;
 
 /**
  * Interfaccia che istanzia gli analizzatori di base

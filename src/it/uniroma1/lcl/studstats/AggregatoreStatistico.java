@@ -1,9 +1,9 @@
 package it.uniroma1.lcl.studstats;
 
-import it.uniroma1.lcl.studstats.analizzatori.Analizzatore;
+import it.uniroma1.lcl.studstats.dati.Analizzatore;
+import it.uniroma1.lcl.studstats.dati.Rapporto;
 import it.uniroma1.lcl.studstats.dati.Studente;
-import it.uniroma1.lcl.studstats.dati.rapporti.Rapporto;
-import it.uniroma1.lcl.studstats.dati.rapporti.TipoRapporto;
+import it.uniroma1.lcl.studstats.dati.TipoRapporto;
 
 import java.util.List;
 

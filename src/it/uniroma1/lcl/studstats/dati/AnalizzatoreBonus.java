@@ -1,9 +1,7 @@
-package it.uniroma1.lcl.studstats.analizzatori;
+package it.uniroma1.lcl.studstats.dati;
 
-import it.uniroma1.lcl.studstats.dati.Studente;
-import it.uniroma1.lcl.studstats.dati.rapporti.RapportiAggiuntivi;
-import it.uniroma1.lcl.studstats.dati.rapporti.Rapporto;
-import it.uniroma1.lcl.studstats.dati.rapporti.TipoRapporto;
+import it.uniroma1.lcl.studstats.dati.rapporti.PossibiliRapporti;
+import it.uniroma1.lcl.studstats.util.AbstractAnalizzatore;
 import it.uniroma1.lcl.studstats.util.DoublePercentage;
 
 import java.util.Collection;
@@ -26,7 +24,7 @@ import java.util.Set;
  *
  * @author Valerio Pescatori
  */
-public class AnalizzatoreBonus implements Analizzatore
+public class AnalizzatoreBonus extends AbstractAnalizzatore implements Analizzatore
 {
 	private final String SESSANTA = "voto < 70";
 	private final String SETTANTA = "70 <= voto < 80";
@@ -36,7 +34,7 @@ public class AnalizzatoreBonus implements Analizzatore
 	@Override
 	public Rapporto generaRapporto(Collection<Studente> studs)
 	{
-		HashMap<String, HashMap<String, DoublePercentage>> toReturn = new HashMap<>();
+		Map<String, HashMap<String, DoublePercentage>> toReturn = new HashMap<>();
 		/* Genero una mappa contente come chiave un titolo di studio e come
 		 * argomento il totale degli studenti per quell'istituto, diviso per 4 fasce di voto
 		 */
@@ -58,12 +56,12 @@ public class AnalizzatoreBonus implements Analizzatore
 			int totStudenti = 0;
 			Set<Map.Entry<String, DoublePercentage>> fasce = istituti.getValue().entrySet();
 			for (Map.Entry<String, DoublePercentage> fascia : fasce)
-				totStudenti += fascia.getValue().toInt();
+				totStudenti += fascia.getValue().intValue();
 
 			for (Map.Entry<String, DoublePercentage> fascia : fasce)
 				fascia.getValue().calculatePercent(totStudenti);
 		}
-		return new Rapporto<>(toReturn, getTipo());
+		return new Rapporto(toReturn, getTipo());
 	}
 
 	private HashMap<String, DoublePercentage> mapGen()
@@ -79,6 +77,6 @@ public class AnalizzatoreBonus implements Analizzatore
 	@Override
 	public TipoRapporto getTipo()
 	{
-		return RapportiAggiuntivi.RAPPORTO_SEGRETO;
+		return PossibiliRapporti.RAPPORTO_BONUS;
 	}
 }

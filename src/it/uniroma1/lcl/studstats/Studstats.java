@@ -1,15 +1,15 @@
 package it.uniroma1.lcl.studstats;
 
-import it.uniroma1.lcl.studstats.analizzatori.*;
+import it.uniroma1.lcl.studstats.dati.Analizzatore;
+import it.uniroma1.lcl.studstats.dati.Rapporto;
 import it.uniroma1.lcl.studstats.dati.Studente;
-import it.uniroma1.lcl.studstats.dati.rapporti.RapportiAggiuntivi;
-import it.uniroma1.lcl.studstats.dati.rapporti.Rapporto;
-import it.uniroma1.lcl.studstats.dati.rapporti.TipoRapporto;
+import it.uniroma1.lcl.studstats.dati.TipoRapporto;
 import it.uniroma1.lcl.studstats.util.MyCsvParser;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Studstats implements AggregatoreStatistico
 {
@@ -48,10 +48,9 @@ public class Studstats implements AggregatoreStatistico
 			return toReturn;
 		}
 		//check sugli analizzatori in tiporapporto (else implicito)
-		Set<TipoRapporto> tipoRapportoSet = Set.of(tipiRapporto);
+		List<TipoRapporto> tipoRapportoList = List.of(tipiRapporto);
 		for (Analizzatore an : listaAnalizzatori)
-			if (tipoRapportoSet.contains(an.getTipo()))
-				toReturn.add(an.generaRapporto(studList));
+			if (tipoRapportoList.contains(an.getTipo())) toReturn.add(an.generaRapporto(studList));
 		return toReturn;
 	}
 
@@ -59,13 +58,5 @@ public class Studstats implements AggregatoreStatistico
 	public int numeroAnalizzatori()
 	{
 		return listaAnalizzatori.size();
-	}
-
-	public static void main(String[] args)
-	{
-		Studstats stats1 = fromFile("src/dasd.csv");
-		stats1.addAll(new AnalizzatoreBonus());
-		List<Rapporto> res = stats1.generaRapporti(RapportiAggiuntivi.RAPPORTO_SEGRETO);
-		res.forEach(System.out::println);
 	}
 }

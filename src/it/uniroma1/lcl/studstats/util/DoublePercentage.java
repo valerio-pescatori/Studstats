@@ -1,6 +1,6 @@
 package it.uniroma1.lcl.studstats.util;
 
-import it.uniroma1.lcl.studstats.analizzatori.AnalizzatoreBonus;
+import it.uniroma1.lcl.studstats.dati.AnalizzatoreBonus;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -14,7 +14,7 @@ import java.math.RoundingMode;
  *
  * @author Valerio Pescatori
  */
-public class DoublePercentage
+public class DoublePercentage extends Number
 {
 	private double num;
 
@@ -33,11 +33,6 @@ public class DoublePercentage
 	public String toString() { return num + "%"; }
 
 	/**
-	 * @return il numero incapsulato sotto forma di intero.
-	 */
-	public int toInt() { return (int) num; }
-
-	/**
 	 * incrementa di 1 il numero
 	 */
 	public void inc() { num++; }
@@ -45,10 +40,23 @@ public class DoublePercentage
 	/**
 	 * Permette di calcolare la percentuale del numero contenuto nell'oggetto relativamente a un certo totale.<br>
 	 * Per far sì che la percentuale calcolata non abbia più di 2 cifre decimali viene utilizzata la classe {@link BigDecimal}.
+	 *
 	 * @param tot totale rispetto al quale calcolare la percentuale
 	 */
 	public void calculatePercent(int tot)
 	{
 		num = new BigDecimal((num / tot) * 100).setScale(2, RoundingMode.FLOOR).stripTrailingZeros().doubleValue();
 	}
+
+	@Override
+	public int intValue() { return (int) num; }
+
+	@Override
+	public long longValue() { return (long) num; }
+
+	@Override
+	public float floatValue() { return (float) num; }
+
+	@Override
+	public double doubleValue() { return num; }
 }
