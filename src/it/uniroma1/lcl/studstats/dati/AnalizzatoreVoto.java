@@ -27,7 +27,7 @@ public class AnalizzatoreVoto extends AbstractAnalizzatore implements Analizzato
 		if (size % 2 == 0) votoMediano = (studList.get(size / 2) + studList.get((size / 2) + 1)) / 2;
 		else votoMediano = studList.get(size / 2);
 		return new Rapporto(Map.of("VOTO",Map.of(
-				"VOTO_MEDIO", new BigDecimal(votoMedio).setScale(2, RoundingMode.FLOOR),
+				"VOTO_MEDIO", new BigDecimal(votoMedio).setScale(2, RoundingMode.DOWN),
 				"VOTO_MAX", studList.get(size - 1),
 				"VOTO_MIN",
 				studList.get(0), "VOTO_MEDIANO", votoMediano)), getTipo());
