@@ -34,7 +34,7 @@ public class AnalizzatoreStudentiVotoMaggiore extends AbstractAnalizzatore imple
 	}
 
 	@Override
-	public int hashCode() { return Objects.hash(analizzatore, voto); }
+	public int hashCode() {	return Objects.hash(analizzatore, voto); }
 
 	@Override
 	public boolean equals(Object obj)
@@ -43,7 +43,7 @@ public class AnalizzatoreStudentiVotoMaggiore extends AbstractAnalizzatore imple
 		if ( obj instanceof AnalizzatoreStudentiVotoMaggiore)
 		{
 			an = (AnalizzatoreStudentiVotoMaggiore) obj;
-			return this.voto==an.voto && this.analizzatore==an.analizzatore;
+			return this.voto==an.voto && this.analizzatore.equals(an.analizzatore);
 		}
 		return false;
 	}

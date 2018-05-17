@@ -1,6 +1,5 @@
 package it.uniroma1.lcl.studstats.util;
 
-import it.uniroma1.lcl.studstats.dati.AnalizzatoreAnnoDiploma;
 import it.uniroma1.lcl.studstats.dati.Studente;
 
 import java.util.*;
@@ -19,7 +18,7 @@ public abstract class AbstractAnalizzatore
 	public int hashCode() { return Objects.hash(getClass()); }
 
 	@Override
-	public boolean equals(Object obj) { return obj instanceof AnalizzatoreAnnoDiploma; }
+	public boolean equals(Object obj) { return obj.getClass() == this.getClass(); }
 
 	/**
 	 * <p> Metodo statico che prende in input una collezione di oggetti Studente (o di una sua sottoclasse), raggruppa per il campo

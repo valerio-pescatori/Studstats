@@ -1,20 +1,21 @@
 package it.uniroma1.lcl.studstats;
 
-import it.uniroma1.lcl.studstats.dati.*;
-import it.uniroma1.lcl.studstats.dati.rapporti.PossibiliRapporti;
+import it.uniroma1.lcl.studstats.dati.Analizzatore;
+import it.uniroma1.lcl.studstats.dati.Rapporto;
+import it.uniroma1.lcl.studstats.dati.Studente;
+import it.uniroma1.lcl.studstats.dati.TipoRapporto;
 import it.uniroma1.lcl.studstats.util.MyCsvParser;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 
 public class Studstats implements AggregatoreStatistico
 {
 	private List<Studente> studList;
-	private Set<Analizzatore> analizzatoreSet = new HashSet<>();
+	private LinkedHashSet<Analizzatore> analizzatoreSet = new LinkedHashSet<>();
 
 	private Studstats(List<Studente> studList) { this.studList = studList; }
 
@@ -58,14 +59,5 @@ public class Studstats implements AggregatoreStatistico
 	public int numeroAnalizzatori()
 	{
 		return analizzatoreSet.size();
-	}
-
-	public static void main(String[] args)
-	{
-		Studstats s1 = fromFile("IMMATRICOLATI_INFORMATICA_SAPIENZA_2018_randomizzato.csv");
-		s1.addAll(Analizzatori.allBasic());
-		List<Rapporto> rapportoList= s1.generaRapporti(PossibiliRapporti.values());
-		rapportoList.forEach(System.out::println);
-
 	}
 }
