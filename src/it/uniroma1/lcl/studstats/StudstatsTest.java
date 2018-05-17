@@ -58,7 +58,7 @@ class StudstatsTest
 		stats.add(new AnalizzatoreStudentiVotoMaggiore(80, new AnalizzatoreIstituti()));
 		stats.add(new AnalizzatoreStudentiVotoMaggiore(70));
 		try {
-			assertEquals(stats.numeroAnalizzatori(), 9);
+			assertEquals(stats.numeroAnalizzatori(), 8);
 			System.out.println("OK!");
 		} catch(Exception e) { System.out.println("NO"); }
 	}
@@ -130,9 +130,9 @@ class StudstatsTest
 
 	static Map<String, Map<String, String>> toMap(String mappa)
 	{
-		Pattern re = Pattern.compile("([A-Z]+) *= *\\{([^\\}]+)\\}");
+		Pattern re = Pattern.compile("([A-Z_]+) *= *\\{([^\\}]+)\\}");
 		Matcher m = re.matcher(mappa);
-		Pattern re2 = Pattern.compile("([a-zA-Z_-]+) *= *([^,]+)");
+		Pattern re2 = Pattern.compile("([a-zA-Z0-9-]+) *= *([^,]+)");
 
 		Map<String, Map<String, String>> result = new TreeMap<>();
 
