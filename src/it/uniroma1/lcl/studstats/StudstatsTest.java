@@ -46,7 +46,8 @@ class StudstatsTest
 		try {
 			assertEquals(stats.numeroAnalizzatori(), 7);
 			System.out.println("OK!");
-		} catch(Exception e) { System.out.println("NO"); }    }
+		} catch (Exception e) { System.out.println("NO"); }
+	}
 
 	@Test
 	void testEqualsHashCode()

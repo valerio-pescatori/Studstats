@@ -1,6 +1,4 @@
-package it.uniroma1.lcl.studstats.dati.rapporti;
-
-import it.uniroma1.lcl.studstats.dati.TipoRapporto;
+package it.uniroma1.lcl.studstats.dati;
 
 /**
  * Enum estensibile che implementa l'interfaccia {@link TipoRapporto}.

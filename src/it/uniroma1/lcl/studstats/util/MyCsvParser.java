@@ -19,14 +19,19 @@ import java.util.List;
 public class MyCsvParser
 {
 	/**
-	 * Equivale ad invocare {@link MyCsvParser#parse(Path, String) MyCsvParser.parse} utilizzando come separatore dei campi ';'.
+	 * costante che individua il separatore di default dei campi nel documento.
+	 */
+	public static final String sep = ";";
+
+	/**
+	 * Equivale ad invocare {@link MyCsvParser#parse(Path, String) MyCsvParser.parse} utilizzando come separatore dei campi {@link #sep}.
 	 *
 	 * @param p il {@link Path} del documento
-	 * @return l'insieme degli studenti se il documento è valido, {@code null} altrimenti.
+	 * @return la lista degli studenti se il documento è valido, {@code null} altrimenti.
 	 */
 	public static List<Studente> parse(Path p)
 	{
-		return parse(p, ";");
+		return parse(p, sep);
 	}
 
 	/**
@@ -35,7 +40,7 @@ public class MyCsvParser
 	 *
 	 * @param p   il {@link Path} del documento
 	 * @param sep il separatore dei campi nel documento
-	 * @return l'insieme degli studenti se il documento è valido, {@code null} altrimenti.
+	 * @return la lista degli studenti se il documento è valido, {@code null} altrimenti.
 	 */
 	public static List<Studente> parse(Path p, String sep)
 	{

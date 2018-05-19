@@ -6,9 +6,6 @@ import java.util.HashMap;
  * Gli oggetti di questa classe rappresentano un singolo studente.<br>
  * Sono costruiti con una mappa che contiene come chiavi il tipo di informazione e come valore il valore dell'informazione relativa
  * ad ogni singolo studente.<br>
- * Due studenti sono considerati uguali quando le loro mappe sono uguali, cioè quando tutte le informazioni di uno sono uguali
- * alle informazioni dell'altro ( es. : stessa scuola, stessa data di nascita, stesso voto ecc.) anche se non è detto che siano lo
- * stesso studente.
  */
 public class Studente
 {

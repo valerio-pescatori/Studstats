@@ -1,6 +1,5 @@
 package it.uniroma1.lcl.studstats.dati;
 
-import it.uniroma1.lcl.studstats.dati.rapporti.PossibiliRapporti;
 import it.uniroma1.lcl.studstats.util.AbstractAnalizzatore;
 import it.uniroma1.lcl.studstats.util.DoublePercentage;
 

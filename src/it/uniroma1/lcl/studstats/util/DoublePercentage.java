@@ -19,10 +19,9 @@ public class DoublePercentage extends Number
 	private double num;
 
 	/**
-	 * Costruttore publico della classe, incapsula al suo interno l'intero preso in input.<br>
-	 * Viene utilizzato {@link BigDecimal} per far sì che i valori abbiano al massimo 2 cifre decimali.
+	 * Costruttore publico della classe, incapsula al suo interno il double preso in input.<br>
 	 *
-	 * @param num inter con il quale si vuole costruire l'oggetto.
+	 * @param num double con il quale si vuole costruire l'oggetto.
 	 */
 	public DoublePercentage(double num)
 	{
